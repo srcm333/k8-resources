@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    project: roboshop
+    tier: frontend
+    componenet: frontend
+spec:
+  # modify replica according to yur case
+  replicas: 3
+  # replicaset uses these labels to match pods
+  selector:
+    matchLabels:
+      project: roboshop
+      tier: frontend
+      componenet: frontend
+  # Posd definition
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        tier: frontend
+        componenet: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
