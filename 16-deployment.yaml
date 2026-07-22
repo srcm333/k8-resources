@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
-  #labels related to deployment resources
+  # labels related to deployment resource
   labels:
     project: roboshop
     tier: frontend
-    componenet: frontend
+    component: frontend
     purpose: deployment
 spec:
   replicas: 10
@@ -14,15 +14,15 @@ spec:
     matchLabels:
       project: roboshop
       tier: frontend
-      componenet: frontend
+      component: frontend
       purpose: deployment
-# Pod definitions
+  # Pod
   template:
     metadata:
       labels:
         project: roboshop
         tier: frontend
-        componenet: frontend
+        component: frontend
         purpose: deployment
     spec:
       containers:
